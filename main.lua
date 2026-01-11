@@ -84,11 +84,12 @@ local PALETTE_X = {
 	[EMBLEM] = "ffffff"
 }
 
---[[
 local ANIMTABLE_X = {
-	[charSelect.CS_ANIM_MENU] = X_ANIM_CS_MENU
+	[charSelect.CS_ANIM_MENU] = X_ANIM_CS_MENU,
+	[CHAR_ANIM_IDLE_HEAD_LEFT] = X_ANIM_IDLE_LEFT,
+	[CHAR_ANIM_IDLE_HEAD_RIGHT] = X_ANIM_IDLE_RIGHT,
+	[CHAR_ANIM_IDLE_HEAD_CENTER] = X_ANIM_IDLE_CENTER
 }
-]]
 
 local function on_character_select_load()
     CT_X = _G.charSelect.character_add(
@@ -99,7 +100,7 @@ local function on_character_select_load()
         E_MODEL_X,
         CT_MARIO,
         TEX_X_LIFE_ICON,
-        1
+        1.1
     )
 
 	-- _G.charSelect.character_add_caps(E_MODEL_X, CAPTABLE_X)
@@ -108,12 +109,13 @@ local function on_character_select_load()
 
     -- _G.charSelect.character_add_palette_preset(E_MODEL_X, PALETTE_X)
 
-	-- _G.charSelect.character_add_animations(E_MODEL_X, ANIMTABLE_X)
+	_G.charSelect.character_add_animations(E_MODEL_X, ANIMTABLE_X)
 
 	-- _G.charSelect.character_add_graffiti(CT_X, TEX_X_GRAFFITI)
 
     _G.charSelect.credit_add(TEXT_MOD_NAME, "Squishy6094", "Movement")
     _G.charSelect.credit_add(TEXT_MOD_NAME, "5UP34", "Modeling / Art")
+    _G.charSelect.credit_add(TEXT_MOD_NAME, "Demi-kun", "Extra Help")
 end
 
 hook_event(HOOK_ON_MODS_LOADED, on_character_select_load)
