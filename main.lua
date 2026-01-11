@@ -95,7 +95,7 @@ local function on_character_select_load()
     CT_X = _G.charSelect.character_add(
         "1996x",
         "I'm gonna getcha!",
-        "Squishy / 5UP34",
+        "Squishy / 5oph1e",
         "1111ff",
         E_MODEL_X,
         CT_MARIO,
